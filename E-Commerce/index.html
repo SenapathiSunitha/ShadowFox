@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce UX Enhancement</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Enhanced E-commerce Website</h1>
+        <div class="filter-sort-section">
+            <div class="filter">
+                <label for="category">Filter by Category:</label>
+                <select id="category" onchange="filterProducts()">
+                    <option value="all">All</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="home-appliances">Home Appliances</option>
+                </select>
+            </div>
+
+            <div class="sort">
+                <label for="sort">Sort by Price:</label>
+                <select id="sort" onchange="sortProducts()">
+                    <option value="low-to-high">Low to High</option>
+                    <option value="high-to-low">High to Low</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="products-list">
+            <div class="product" data-category="electronics" data-price="22000">
+                <img src="product-images/smartphone.jpg" alt="Smartphone" class="product-image">
+                <h2>Smartphone</h2>
+                <p>Price: $22000</p>
+                <button onclick="addToCart('Smartphone', 22000)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-category="electronics" data-price="3000">
+                <img src="product-images/smartwatch.jpg" alt="Smartwatch" class="product-image">
+                <h2>Smartwatch</h2>
+                <p>Price: $3000</p>
+                <button onclick="addToCart('Smartwatch', 3000)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-category="electronics" data-price="45000">
+                <img src="product-images/Laptop.jpg" alt="Laptop" class="product-image">
+                <h2>Laptop</h2>
+                <p>Price: $45000</p>
+                <button onclick="addToCart('Laptop', 45000)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-category="fashion" data-price="3000">
+                <img src="product-images/Saree.jpg" alt="Saree" class="product-image">
+                <h2>Saree</h2>
+                <p>Price: $3000</p>
+                <button onclick="addToCart('Saree', 3000)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-category="fashion" data-price="150">
+                <img src="product-images/tshirt.jpg" alt="T-shirt" class="product-image">
+                <h2>T-shirt</h2>
+                <p>Price: $150</p>
+                <button onclick="addToCart('T-shirt', 150)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-category="fashion" data-price="600">
+                <img src="product-images/Kurti.jpg" alt="Kurti" class="product-image">
+                <h2>Kurti</h2>
+                <p>Price: $600</p>
+                <button onclick="addToCart('Kurti', 600)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-category="home-appliances" data-price="48000">
+                <img src="product-images/Refrigerator.jpg" alt="Refrigerator" class="product-image">
+                <h2>Refrigerator</h2>
+                <p>Price: $48000</p>
+                <button onclick="addToCart('Refrigerator', 48000)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-category="home-appliances" data-price="200">
+                <img src="product-images/blender.jpg" alt="Blender" class="product-image">
+                <h2>Blender</h2>
+                <p>Price: $200</p>
+                <button onclick="addToCart('Blender', 200)">Add to Cart</button>
+            </div>
+
+            <div class="product" data-category="home-appliances" data-price="12800">
+                <img src="product-images/WashingMachine.jpg" alt="WashingMachine" class="product-image">
+                <h2>WashingMachine</h2>
+                <p>Price: $12800</p>
+                <button onclick="addToCart('WashingMachine', 12800)">Add to Cart</button>
+            </div>
+            <!-- Add more product entries with images -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="checkout">
+            <h2>Cart Total: $<span id="cart-total">0</span></h2>
+            <ul id="cart-items"></ul>
+            <button onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
